@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ProductList = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -9,7 +10,7 @@ const ProductList = () => {
     const token = localStorage.getItem('token');
 
     if (token) {
-      axios.get('http://localhost:8000/api/products/', {
+      axios.get(`${apiUrl}/products/`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

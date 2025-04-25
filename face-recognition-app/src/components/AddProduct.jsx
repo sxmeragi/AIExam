@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const AddProduct = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(0);
@@ -15,7 +16,7 @@ const AddProduct = () => {
     if (token) {
       const newProduct = { name, description, quantity, price };
 
-      axios.post('http://localhost:8000/api/products/', newProduct, {
+      axios.post(`${apiUrl}/products/`, newProduct, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',

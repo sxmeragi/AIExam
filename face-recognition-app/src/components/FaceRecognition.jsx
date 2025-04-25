@@ -107,6 +107,7 @@ const FaceRecognition = ({ onFaceRecognized }) => {
       labels.map(async (label) => {
         const descriptions = [];
         for (let i = 1; i <= 2; i++) {
+          try{
           const img = await faceapi.fetchImage(
             `/labeled_images/${label}/${i}.jpg`
           );
@@ -115,7 +116,13 @@ const FaceRecognition = ({ onFaceRecognized }) => {
             .withFaceLandmarks()
             .withFaceDescriptor();
           descriptions.push(detections.descriptor);
+        } 
+        catch (error){
+          console.error(`Error loading image for ${label}/${i}.jpg`, error);
         }
+        }
+        
+        
         return new faceapi.LabeledFaceDescriptors(label, descriptions);
       })
     );

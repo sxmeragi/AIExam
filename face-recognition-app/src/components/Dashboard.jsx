@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Dashboard = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [role, setRole] = useState('');
   const [employeeCount, setEmployeeCount] = useState(0);
   const [error, setError] = useState('');
@@ -11,7 +12,7 @@ const Dashboard = () => {
 
     if (token) {
       // Получаем роль текущего пользователя
-      axios.get('http://localhost:8000/api/user/role', {
+      axios.get(`${apiUrl}/user/role`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         }
@@ -33,7 +34,7 @@ const Dashboard = () => {
 
   const fetchEmployeeCount = (token) => {
     // Получаем количество сотрудников только для директора
-    axios.get('http://localhost:8000/api/employees/count', {
+    axios.get(`${apiUrl}/employees/count`, {
       headers: {
         'Authorization': `Bearer ${token}`,
       }

@@ -5,14 +5,17 @@ import ProductList from "./components/ProductList";
 import AddProduct from "./components/AddProduct";
 import Dashboard from "./components/Dashboard";
 
+
 const App = () => {
+
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [userRole, setUserRole] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:8000/api/user/role", {
+      fetch(`${apiUrl}/user/role`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
