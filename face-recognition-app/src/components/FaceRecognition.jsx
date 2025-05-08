@@ -43,6 +43,7 @@ const FaceRecognition = ({ onFaceRecognized }) => {
         alert("Не удалось подключиться к камере");
       });
   };
+
   const handleRecognition = async () => {
     if (videoRef.current && !loading) {
       const video = videoRef.current;
@@ -61,13 +62,13 @@ const FaceRecognition = ({ onFaceRecognized }) => {
 
         const role = bestMatch.label;
         const accuracy = (1 - bestMatch.distance) * 100;
-
         onFaceRecognized(role, accuracy);
       }
     }
 
     // Если изображение загружено, обрабатываем его
     if (image && !loading) {
+      console.log(`Loaded image size: ${image.width}x${image.height}`);
       const detections = await faceapi
         .detectAllFaces(image)
         .withFaceLandmarks()
@@ -83,13 +84,12 @@ const FaceRecognition = ({ onFaceRecognized }) => {
 
         const role = bestMatch.label;
         const accuracy = (1 - bestMatch.distance) * 100;
-
-        onFaceRecognized(role, accuracy);
+        console.log(role, accuracy);
+        onFaceRecognized(role, accuracy); // Обновляем роль и точность
       }
     }
   };
 
-  // Загрузка изображения
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -102,27 +102,34 @@ const FaceRecognition = ({ onFaceRecognized }) => {
   };
 
   const loadLabeledImages = async () => {
-    const labels = ["director", "worker", "guest"];
+    const labels = ["director", "worker"];
     return Promise.all(
       labels.map(async (label) => {
         const descriptions = [];
         for (let i = 1; i <= 2; i++) {
-          try{
-          const img = await faceapi.fetchImage(
-            `/labeled_images/${label}/${i}.jpg`
-          );
-          const detections = await faceapi
-            .detectSingleFace(img)
-            .withFaceLandmarks()
-            .withFaceDescriptor();
-          descriptions.push(detections.descriptor);
-        } 
-        catch (error){
-          console.error(`Error loading image for ${label}/${i}.jpg`, error);
+          try {
+            const img = await faceapi.fetchImage(
+              `/labeled_images/${label}/${i}.png`
+            );
+            const detections = await faceapi
+              .detectSingleFace(img)
+              .withFaceLandmarks()
+              .withFaceDescriptor();
+
+            if (detections) {
+              descriptions.push(detections.descriptor);
+            } else {
+              console.warn(`No face detected in ${label}/${i}.png`);
+            }
+          } catch (error) {
+            console.error(`Error loading image for ${label}/${i}.png`, error);
+          }
         }
+
+        if (descriptions.length === 0) {
+          console.warn(`No valid faces found for label: ${label}`);
         }
-        
-        
+
         return new faceapi.LabeledFaceDescriptors(label, descriptions);
       })
     );
@@ -148,7 +155,7 @@ const FaceRecognition = ({ onFaceRecognized }) => {
                 <img
                   src={image.src}
                   alt="Uploaded"
-                  style={{ width: "100%", height: "auto" }}
+                  style={{ width: "500px", height: "auto" }}
                 />
                 <button onClick={handleRecognition}>Recognize Face</button>
               </>
@@ -159,4 +166,5 @@ const FaceRecognition = ({ onFaceRecognized }) => {
     </div>
   );
 };
+
 export default FaceRecognition;
