@@ -4,10 +4,11 @@
 }
 
 .heroContent {
-  margin-top: 100px;
+  margin-top: 70px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 150px;
 }
 
 .heroText {
@@ -15,7 +16,9 @@
   max-width: 510px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap: 30px;
+  height: auto;
 }
 
 .heroStat {
@@ -53,6 +56,16 @@
   transform: scale(0.92);
 }
 
+.heroImg {
+  width: 510px;
+  height: 510px;
+}
+h1,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}
 h1 {
   font-size: 67px;
   padding: 0;
@@ -64,5 +77,8 @@ h4 {
 }
 
 p {
-  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 38.4px;
+  position: relative;
+  text-align: left;
 }

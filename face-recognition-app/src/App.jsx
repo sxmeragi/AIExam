@@ -13,10 +13,7 @@ import ProductList from "./components/ProductList";
 import AddProduct from "./components/AddProduct";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
-import NavBar from "./components/NavBar/NavBar";
-
-import { Hero } from "./components/Hero/Hero";
-import Collection from "./components/TrendingCollection/collection";
+import Main from "./components/Main/Main";
 
 const App = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -75,9 +72,7 @@ const App = () => {
 
   return (
     <div>
-      <NavBar></NavBar>
-      <Hero></Hero>
-      <Collection></Collection>
+      <Main></Main>
       {/* {!isAuthenticated ? (
         <Routes>
           <Route

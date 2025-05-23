@@ -1,5 +1,7 @@
 import React from "react";
-import Image1 from "../../assets/Collection/1.jpg";
+import Image1 from "../../../assets/Collection/1.jpg";
+import Image2 from "../../../assets/Collection/2.jpg";
+
 import styles from "./Collection.module.css";
 
 const Collection = () => {
@@ -28,16 +30,16 @@ const Collection = () => {
             </div>
           </div>
           <div className={styles.collectionItem}>
-            <img src={Image1} alt="" className={styles.mainImage} />
+            <img src={Image2} alt="" className={styles.mainImage} />
             <div className={styles.collectionMicroImgs}>
-              <img src={Image1} alt="" className={styles.secondImage} />
-              <img src={Image1} alt="" className={styles.secondImage} />
+              <img src={Image2} alt="" className={styles.secondImage} />
+              <img src={Image2} alt="" className={styles.secondImage} />
               <button className={styles.collectionButton}>1025+</button>
             </div>
             <div className={styles.collectionInfo}>
               <h5>Inazuma</h5>
               <div className={styles.collectionLogo}>
-                <img src={Image1} alt="" className={styles.collectionLogoImg} />
+                <img src={Image2} alt="" className={styles.collectionLogoImg} />
                 <p>Name</p>
               </div>
             </div>

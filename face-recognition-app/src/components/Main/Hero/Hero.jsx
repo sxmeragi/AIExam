@@ -1,5 +1,5 @@
 import React from "react";
-import gifImage from "../../assets/yourgif.gif";
+import gifImage from "../../../assets/framegif.gif";
 import styles from "./Hero.module.css";
 export const Hero = () => {
   return (
@@ -31,7 +31,7 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-        <img src={gifImage} alt="QWE" />
+        <img src={gifImage} alt="QWE" className={styles.heroImg} />
       </div>
     </div>
   );
