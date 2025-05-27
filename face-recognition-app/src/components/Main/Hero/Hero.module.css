@@ -76,7 +76,7 @@ h4 {
   font-size: 22px;
 }
 
-p {
+.heroPText {
   letter-spacing: 0px;
   line-height: 38.4px;
   position: relative;

@@ -26,10 +26,319 @@ const Creators = () => {
                       <span className={styles.additionalInfoText}>
                         Total sales:{" "}
                       </span>
-                      34.53 ETH
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
                     </p>
                   </div>
-                  {/* <div className="rankingNumber"></div> */}
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div className={styles.creatorsGridRow}>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div className={styles.creatorsGridRow}>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="" className="">
+              <div className={styles.creatorCard}>
+                <div className={styles.creatorAvatar}>
+                  <img src={Image} alt="" className={styles.creatorAvatarImg} />
+                </div>
+                <div className={styles.creatorInfo}>
+                  <h5>seemmmyq</h5>
+                  <div className="additionalInfo">
+                    <p>
+                      <span className={styles.additionalInfoText}>
+                        Total sales:{" "}
+                      </span>
+                      <span className={styles.additionalInfoPrice}>
+                        34.53 ETH
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.rankingNumber}>
+                  <p
+                    className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                  >
+                    1
+                  </p>
                 </div>
               </div>
             </a>

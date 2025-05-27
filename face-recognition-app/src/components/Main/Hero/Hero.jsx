@@ -11,7 +11,7 @@ export const Hero = () => {
             Digital Art & <br />
             Collect Nfts
           </h1>
-          <p>
+          <p className={styles.heroPText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugit
             sapiente quia quaerat.
           </p>

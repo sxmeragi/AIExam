@@ -10,7 +10,9 @@ const Collection = () => {
       <div className={styles.collectionContent}>
         <div className={styles.collectionLabel}>
           <h3>Trending Collection</h3>
-          <p>Checkout our weekly updated trending collection.</p>
+          <p className={styles.collectionText}>
+            Checkout our weekly updated trending collection.
+          </p>
         </div>
 
         <div className={styles.collectionItems}>
@@ -25,7 +27,7 @@ const Collection = () => {
               <h5>Inazuma</h5>
               <div className={styles.collectionLogo}>
                 <img src={Image1} alt="" className={styles.collectionLogoImg} />
-                <p>Name</p>
+                <p className={styles.collectionText}>Name</p>
               </div>
             </div>
           </div>
@@ -40,7 +42,7 @@ const Collection = () => {
               <h5>Inazuma</h5>
               <div className={styles.collectionLogo}>
                 <img src={Image2} alt="" className={styles.collectionLogoImg} />
-                <p>Name</p>
+                <p className={styles.collectionText}>Name</p>
               </div>
             </div>
           </div>
@@ -55,7 +57,7 @@ const Collection = () => {
               <h5>Inazuma</h5>
               <div className={styles.collectionLogo}>
                 <img src={Image1} alt="" className={styles.collectionLogoImg} />
-                <p>Name</p>
+                <p className={styles.collectionText}>Name</p>
               </div>
             </div>
           </div>
