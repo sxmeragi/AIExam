@@ -1,12 +1,12 @@
 import React from "react";
-import Image from "../../../assets/Ranking/hacker.png";
+import Image from "../../../assets/Main/Ranking/hacker.png";
 import styles from "./Creators.module.css";
 const Creators = () => {
   return (
     <div className={styles.container}>
       <div className={styles.creatorsContent}>
         <div className={styles.creatorsLabel}>
-          <div className="creatorsLabelText">
+          <div className={styles.creatorsLabelText}>
             <h3 className={styles.creatorsH3}>Top Creators</h3>
             <p className={styles.creatorsP}>Checkout Top Rated Creators</p>
           </div>

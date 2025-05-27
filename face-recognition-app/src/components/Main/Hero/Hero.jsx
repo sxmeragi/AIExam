@@ -1,5 +1,5 @@
 import React from "react";
-import gifImage from "../../../assets/framegif.gif";
+import gifImage from "../../../assets/Main/Hero/framegif.gif";
 import styles from "./Hero.module.css";
 export const Hero = () => {
   return (

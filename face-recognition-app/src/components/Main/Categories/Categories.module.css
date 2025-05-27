@@ -1,0 +1,100 @@
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.categoriesContent {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 150px;
+}
+.categoriesLabel {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.categoriesLabelText {
+  font-family: "Work Sans", Helvetica;
+  font-size: 38px;
+}
+.categoriesGrid {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: auto;
+  width: fit-content;
+}
+.categoriesGridRow {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  height: auto;
+  position: relative;
+  flex-direction: row;
+  width: 1050px;
+}
+.categoriesCard {
+  align-items: flex-start;
+  background-color: #3b3b3b;
+  border-radius: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: auto;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.categoriesCard:hover {
+  transform: scale(0.92);
+}
+
+.categoriesCardImgBackDiv {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.categoriesCardImgBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.iconContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.iconContainer:hover {
+  transform: scale(0.92);
+}
+
+.iconImg {
+  width: 100px;
+  height: 100px;
+}
+.categoriesCardName {
+  padding: 30px;
+}
