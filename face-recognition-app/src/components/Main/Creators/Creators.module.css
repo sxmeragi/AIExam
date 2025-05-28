@@ -69,7 +69,9 @@ a {
   font-style: normal;
   font-weight: 600;
 }
-
+.creatorsButton:hover {
+  transform: scale(0.92);
+}
 .creatorsGrid {
   align-items: flex-start;
   background-color: transparent;

@@ -4,6 +4,7 @@ import { Hero } from "./Hero/Hero";
 import Collection from "./TrendingCollection/Collection";
 import Creators from "./Creators/Creators";
 import Categories from "./Categories/Categories";
+import Nfts from "./TrendingNFTS/Nfts";
 const Main = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Main = () => {
       <Collection></Collection>
       <Creators></Creators>
       <Categories></Categories>
+      <Nfts></Nfts>
     </>
   );
 };

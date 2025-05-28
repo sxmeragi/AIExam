@@ -1,0 +1,190 @@
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.nftsContent {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 150px;
+}
+
+.nftsLabel {
+  align-items: flex-end;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  height: auto;
+  position: relative;
+  justify-content: space-between;
+}
+
+.nftsLabelText {
+  font-family: "Work Sans", sans-serif;
+}
+
+.nftsH3 {
+  font-family: "Work Sans", Helvetica;
+  font-size: 38px;
+}
+
+.nftsP {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.nftsButton {
+  color: #fff;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid;
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+  border-color: #a259ff;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  height: 60px;
+  justify-content: center;
+  padding: 0px 50px;
+  pointer-events: auto;
+  position: relative;
+  transition: all 0.3s ease;
+  width: fit-content;
+  min-width: 180px;
+
+  font-family: "Work Sans", Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.nftsButton:hover {
+  transform: scale(0.92);
+}
+
+.nftsItems {
+  align-items: flex-start;
+  display: flex;
+  gap: 30px;
+  height: auto;
+  overflow-x: scroll;
+  position: relative;
+  width: 1050px;
+}
+.nftsItem {
+  background-color: #3b3b3b;
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 20px;
+  height: auto;
+}
+.nftsItemImgDiv {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  position: relative;
+}
+.nftsItemImg {
+  align-self: stretch;
+  background-color: transparent;
+  height: 296px;
+  min-width: 330px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  position: relative;
+}
+.nftsItemText {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: auto;
+  padding: 20px 30px 25px;
+  position: relative;
+}
+.nftsItemTextInfo {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: auto;
+  position: relative;
+}
+.nftsItemTextInfoH5 {
+  font-family: "Work Sans", Helvetica;
+  font-size: 22px;
+}
+.nftsItemTextAuthor {
+  border-radius: 20px;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 12px;
+  height: auto;
+  position: relative;
+}
+.nftsItemTextAuthorImg {
+  height: 24px;
+  object-fit: cover;
+  width: 24px;
+}
+.nftsItemTextAuthorName {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+}
+.nftsItemTextPrice {
+  align-items: flex-start;
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  height: auto;
+}
+.ItemTextPriceInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  height: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+.nftsItemTextPriceInfoLabel {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: #858584;
+}
+.nftsItemTextPriceInfoValue {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+}
+.nftsItemTextPriceHigh {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: auto;
+  justify-content: center;
+  flex-direction: column;
+}

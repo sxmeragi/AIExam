@@ -2,6 +2,7 @@
   max-width: 1050px;
   margin: 0 auto;
 }
+
 .categoriesContent {
   margin-top: 100px;
   display: flex;
@@ -10,15 +11,18 @@
   gap: 60px;
   margin-bottom: 150px;
 }
+
 .categoriesLabel {
   width: 100%;
   display: flex;
   align-items: flex-start;
 }
+
 .categoriesLabelText {
   font-family: "Work Sans", Helvetica;
   font-size: 38px;
 }
+
 .categoriesGrid {
   align-items: flex-start;
   background-color: transparent;
@@ -28,6 +32,7 @@
   height: auto;
   width: fit-content;
 }
+
 .categoriesGridRow {
   align-items: flex-start;
   background-color: transparent;
@@ -39,6 +44,7 @@
   flex-direction: row;
   width: 1050px;
 }
+
 .categoriesCard {
   align-items: flex-start;
   background-color: #3b3b3b;
@@ -52,6 +58,7 @@
   position: relative;
   transition: all 0.3s ease;
 }
+
 .categoriesCard:hover {
   transform: scale(0.92);
 }
@@ -87,6 +94,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .iconContainer:hover {
   transform: scale(0.92);
 }
