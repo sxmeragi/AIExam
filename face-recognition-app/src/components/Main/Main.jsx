@@ -5,6 +5,7 @@ import Collection from "./TrendingCollection/Collection";
 import Creators from "./Creators/Creators";
 import Categories from "./Categories/Categories";
 import Nfts from "./TrendingNFTS/Nfts";
+import Auction from "./Auction/Auction";
 const Main = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Main = () => {
       <Creators></Creators>
       <Categories></Categories>
       <Nfts></Nfts>
+      <Auction></Auction>
     </>
   );
 };

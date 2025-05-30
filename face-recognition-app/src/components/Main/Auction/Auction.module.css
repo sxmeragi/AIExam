@@ -1,0 +1,157 @@
+.auctionHighlight {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/nft-highlight@1x.png);
+  background-position: 50% 50%;
+
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.auctionGradient {
+  background: linear-gradient(
+    180deg,
+    rgba(162.00005114078522, 89.00000989437103, 255, 0) 0%,
+    rgb(162.00000554323196, 89.00000229477882, 255) 100%
+  );
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.auctionContent {
+  align-items: flex-end;
+  align-self: stretch;
+
+  padding: 360px 195px 60px;
+  position: relative;
+  align-items: flex-end;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+
+.auctionInfo {
+  align-items: flex-end;
+  background-color: transparent;
+  display: flex;
+  height: auto;
+  min-width: 1050px;
+}
+.auctionAbout {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.auctionAuthor {
+  align-items: center;
+  background-color: #3b3b3b;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  height: auto;
+  mix-blend-mode: normal;
+  padding: 10px 20px;
+  position: relative;
+  width: fit-content;
+}
+.auctionAuthorPfp {
+  height: 24px;
+  object-fit: cover;
+  width: 24px;
+  border-radius: 20px;
+}
+.auctionAuthorName {
+  font-family: "Work Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.auctionLabelText {
+  font-family: "Work Sans", Helvetica;
+  font-size: 51px;
+  font-weight: 700;
+}
+.auctionButton {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  height: 60px;
+  justify-content: center;
+  mix-blend-mode: normal;
+  padding: 22px 50px;
+  pointer-events: auto;
+  position: relative;
+  transition: all 0.3s ease;
+  width: fit-content;
+
+  font-family: "Work Sans", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.auctionButton:hover {
+  transform: scale(0.92);
+}
+
+.auctionTimer {
+  align-items: flex-start;
+  background-color: rgba(59, 59, 59, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  justify-content: flex-end;
+  mix-blend-mode: normal;
+  padding: 30px;
+  position: relative;
+  width: 295px;
+}
+.auctionTimerTime {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+}
+.auctionTimerLabel {
+  font-size: 12px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+.auctionTimerHours,
+.auctionTimerMinutes,
+.auctionTimerSeconds {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  height: auto;
+}
+.auctionTimerHoursLabel {
+  font-size: 38px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+.auctionTimerHoursText {
+  font-size: 12px;
+  font-family: "Space Mono", monospace;
+}
+.auctionTimerSpaceText {
+  font-size: 38px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
