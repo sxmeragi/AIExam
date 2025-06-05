@@ -1,0 +1,74 @@
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.subscribeContent {
+  background-color: #3b3b3b;
+  padding: 60px;
+  align-items: center;
+  gap: 70px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+.subscribeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+.subscribeLabel {
+  font-family: "Work Sans", Helvetica;
+  font-weight: 600;
+  padding-bottom: 20px;
+  font-size: 38px;
+  max-width: 425px;
+  text-wrap: wrap;
+}
+.subscribeText {
+  font-family: "Work Sans", Helvetica;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.subscribeIForm {
+  align-items: center;
+  align-self: stretch;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  gap: 12px;
+  height: 30px;
+  mix-blend-mode: normal;
+  padding: 16px 0px 16px 20px;
+  position: relative;
+}
+.subscribeInput {
+  border: 0;
+  flex: 1;
+  height: 22px;
+  font-family: "Work Sans", Helvetica;
+  font-size: 16px;
+  mix-blend-mode: normal;
+  padding: 0;
+  position: relative;
+  resize: none;
+  text-align: left;
+  white-space: nowrap;
+}
+.subscribeButton {
+  align-items: center;
+  background-color: #a259ff;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  height: 45px;
+  gap: 12px;
+  padding: 10px 50px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+.subscribeButton:hover {
+  transform: scale(0.92);
+}

@@ -7,6 +7,7 @@ import Categories from "./Categories/Categories";
 import Nfts from "./TrendingNFTS/Nfts";
 import Auction from "./Auction/Auction";
 import How from "./HowITWorks/How";
+import Subscribe from "./Subscribe/Subscribe";
 const Main = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Main = () => {
       <Nfts></Nfts>
       <Auction></Auction>
       <How></How>
+      <Subscribe></Subscribe>
     </>
   );
 };
