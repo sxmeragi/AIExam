@@ -1,0 +1,64 @@
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.howContent {
+  margin-top: 150px;
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+.howLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.howLabelH3 {
+  font-family: "Work Sans", Helvetica;
+  font-weight: 600;
+  font-size: 38px;
+}
+.howLabelText {
+  font-family: "Work Sans", Helvetica;
+  font-weight: 400;
+  font-size: 22px;
+}
+.howSteps {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.HowStepsItem {
+  align-items: center;
+  background-color: #3b3b3b;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 430px;
+
+  width: 330px;
+}
+.howStepsItemInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.howStepsItemLabel {
+  font-family: "Work Sans", Helvetica;
+  font-weight: 600;
+  font-size: 22px;
+}
+.howStepsItemText {
+  font-family: "Work Sans", Helvetica;
+  letter-spacing: 3x;
+  line-height: 22.4px;
+  text-align: center;
+  font-size: 16px;
+  max-width: 270px;
+}
