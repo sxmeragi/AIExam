@@ -4,12 +4,14 @@
 }
 .subscribeContent {
   background-color: #3b3b3b;
+  border-radius: 20px;
   padding: 60px;
   align-items: center;
   gap: 70px;
   justify-content: space-around;
   display: flex;
   flex-direction: row;
+  margin-bottom: 150px;
 }
 .subscribeInfo {
   display: flex;

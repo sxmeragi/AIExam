@@ -8,6 +8,7 @@ import Nfts from "./TrendingNFTS/Nfts";
 import Auction from "./Auction/Auction";
 import How from "./HowITWorks/How";
 import Subscribe from "./Subscribe/Subscribe";
+import Footer from "./Footer/Footer";
 const Main = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const Main = () => {
       <Auction></Auction>
       <How></How>
       <Subscribe></Subscribe>
+      <Footer></Footer>
     </>
   );
 };
