@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "Exam",
+    "nft",
     "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -134,4 +134,3 @@ REST_FRAMEWORK = {
 }
 
 
-AUTH_USER_MODEL = "Exam.User"
