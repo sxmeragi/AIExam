@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
-  Route,
   Routes,
-  Link,
-  Navigate,
+  Route,
   useNavigate,
 } from "react-router-dom";
+
 import FaceRecognition from "./components/FaceRecognition";
 import ProductList from "./components/ProductList";
 import AddProduct from "./components/AddProduct";
@@ -16,12 +15,13 @@ import Login from "./components/Login";
 import Main from "./components/Main/Main";
 
 const App = () => {
+  const navigate = useNavigate();
+
   const apiUrl = import.meta.env.VITE_API_URL;
   const [userRole, setUserRole] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -30,7 +30,9 @@ const App = () => {
     setAccuracy(null);
     navigate("/login");
   };
-
+  const handleLoginSuccess = () => {
+    navigate("/");
+  };
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -72,7 +74,6 @@ const App = () => {
 
   return (
     <div>
-      <Main></Main>
       {/* {!isAuthenticated ? (
         <Routes>
           <Route
@@ -162,6 +163,11 @@ const App = () => {
           </Routes>
         </>
       )} */}
+
+      <Routes>
+        <Route path="/login" element={<Login onLogin={handleLoginSuccess} />} />
+        <Route path="/" element={<Main />} />
+      </Routes>
     </div>
   );
 };

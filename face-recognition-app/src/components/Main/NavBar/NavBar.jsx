@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
@@ -22,7 +27,9 @@ const NavBar = () => {
         <Link href="#contact" className={styles.link}>
           Contact
         </Link>
-        <button className={styles.signupButton}>Sign Up</button>
+        <button className={styles.signupButton} onClick={handleLoginClick}>
+          Sign Up
+        </button>
       </div>
     </nav>
   );

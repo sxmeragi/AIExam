@@ -1,58 +1,63 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const Login = ({ onLoginSuccess }) => {
-  const apiUrl = import.meta.env.VITE_API_URL;
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      console.log(username, password);
-      const response = await fetch("http://localhost:8000/api/token/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
+      const response = await axios.post("http://localhost:8000/api/token/", {
+        username,
+        password,
       });
-      const data = await response.json();
-      console.log(data);
-      if (data.access) {
-        console.log("SUCCES");
-        localStorage.setItem("token", data.access);
-        onLoginSuccess();
-      } else {
-        alert("Invalid credentials");
+
+      const { access, refresh } = response.data;
+      localStorage.setItem("access_token", access);
+      localStorage.setItem("refresh_token", refresh);
+      axios.defaults.headers.common["Authorization"] = `Bearer ${access}`;
+
+      if (onLogin) {
+        onLogin();
+        console.log("22");
       }
-    } catch (error) {
-      console.error("Login failed", error);
+    } catch (err) {
+      setError("Неверное имя пользователя или пароль");
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <h2>Вход</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Имя пользователя:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Пароль:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit">Войти</button>
+      </form>
+    </div>
   );
 };
 
