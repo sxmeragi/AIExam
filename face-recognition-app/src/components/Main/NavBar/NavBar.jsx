@@ -2,12 +2,22 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ isAuthenticated }) => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
     navigate("/login");
   };
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    navigate("/login");
+  };
+
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
@@ -15,11 +25,11 @@ const NavBar = () => {
         <span className={styles.brand}>MyBrand</span>
       </div>
       <div className={styles.right}>
-        <Link href="#home" className={styles.link}>
+        <Link to="/" className={styles.link}>
           Home
         </Link>
-        <Link href="#about" className={styles.link}>
-          About
+        <Link to="/nfts" className={styles.link}>
+          Marketplace
         </Link>
         <Link href="#services" className={styles.link}>
           Services
@@ -27,9 +37,15 @@ const NavBar = () => {
         <Link href="#contact" className={styles.link}>
           Contact
         </Link>
-        <button className={styles.signupButton} onClick={handleLoginClick}>
-          Sign Up
-        </button>
+        {isAuthenticated ? (
+          <button className={styles.signupButton} onClick={handleProfileClick}>
+            Profile
+          </button>
+        ) : (
+          <button className={styles.signupButton} onClick={handleLoginClick}>
+            Sign In
+          </button>
+        )}
       </div>
     </nav>
   );

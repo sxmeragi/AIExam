@@ -13,6 +13,11 @@ import AddProduct from "./components/AddProduct";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Main from "./components/Main/Main";
+import Profile from "./components/Profile";
+import Register from "./components/Register";
+import NFTDetail from "./components/NFT/nftDetail";
+import NFTList from "./components/NFT/nftList";
+import PrivateRoute from "./components/PrivateRoute";
 
 const App = () => {
   const navigate = useNavigate();
@@ -20,7 +25,10 @@ const App = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const [userRole, setUserRole] = useState(null);
   const [accuracy, setAccuracy] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
   const [loading, setLoading] = useState(true);
 
   const handleLogout = () => {
@@ -167,6 +175,17 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLoginSuccess} />} />
         <Route path="/" element={<Main />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/nfts/:id" element={<NFTDetail />} />
+        <Route
+          path="/nfts"
+          element={
+            <PrivateRoute>
+              <NFTList />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </div>
   );

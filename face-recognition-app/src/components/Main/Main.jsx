@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./NavBar/NavBar";
 import { Hero } from "./Hero/Hero";
 import Collection from "./TrendingCollection/Collection";
@@ -10,9 +10,12 @@ import How from "./HowITWorks/How";
 import Subscribe from "./Subscribe/Subscribe";
 import Footer from "./Footer/Footer";
 const Main = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    !!localStorage.getItem("access_token")
+  );
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar isAuthenticated={isAuthenticated} />
       <Hero></Hero>
       <Collection></Collection>
       <Creators></Creators>

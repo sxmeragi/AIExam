@@ -7,12 +7,12 @@ const baseURL = import.meta.env.VITE_API_URL;
 const axiosInstance = axios.create({
   baseURL,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem("access")}`,
+    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
   },
 });
 
 axiosInstance.interceptors.request.use(async (req) => {
-  const accessToken = localStorage.getItem("access");
+  const accessToken = localStorage.getItem("access_token");
 
   if (!accessToken) return req;
 
@@ -26,17 +26,17 @@ axiosInstance.interceptors.request.use(async (req) => {
 
   try {
     const response = await axios.post(`${baseURL}/api/token/refresh/`, {
-      refresh: localStorage.getItem("refresh"),
+      refresh: localStorage.getItem("refresh_token"),
     });
 
     const newAccess = response.data.access;
-    localStorage.setItem("access", newAccess);
+    localStorage.setItem("access_token", newAccess);
     req.headers.Authorization = `Bearer ${newAccess}`;
     return req;
   } catch (err) {
     console.error("Token refresh error:", err);
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
     window.location.href = "/login";
     return Promise.reject(err);
   }
