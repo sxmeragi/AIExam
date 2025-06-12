@@ -42,10 +42,16 @@ const NFTList = () => {
         </Typography>
         <Grid container spacing={3}>
           {nfts.map((nft) => (
-            <Grid item xs={12} sm={6} md={4} key={nft.id}>
+            <Grid
+              item
+              sx={{ backgroundColor: "#3b3b3b", borderRadius: "20px" }}
+              xs={12}
+              sm={6}
+              md={4}
+              key={nft.id}
+            >
               <Card
                 sx={{
-                  backgroundColor: "#2d2d2d",
                   color: "white",
                   textDecoration: "none",
                 }}
@@ -54,13 +60,17 @@ const NFTList = () => {
               >
                 <CardMedia
                   component="img"
-                  height="200"
+                  height="210"
                   image={nft.image}
                   alt={nft.title}
-                  sx={{ objectFit: "cover" }}
+                  sx={{
+                    objectFit: "cover",
+                    borderTopLeftRadius: "20px",
+                    borderTopRightRadius: "20px",
+                  }}
                 />
                 <CardContent>
-                  <Typography variant="h6">{nft.title}</Typography>
+                  <Typography variant="h6">{nft.name}</Typography>
                   <Typography variant="body2" color="gray">
                     Автор: {nft.creator_username}
                   </Typography>

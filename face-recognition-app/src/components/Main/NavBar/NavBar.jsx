@@ -31,11 +31,11 @@ const NavBar = ({ isAuthenticated }) => {
         <Link to="/nfts" className={styles.link}>
           Marketplace
         </Link>
-        <Link href="#services" className={styles.link}>
-          Services
+        <Link to="/nfts/create" className={styles.link}>
+          Create NFT
         </Link>
-        <Link href="#contact" className={styles.link}>
-          Contact
+        <Link to="/my-nfts" className={styles.link}>
+          My NFTS
         </Link>
         {isAuthenticated ? (
           <button className={styles.signupButton} onClick={handleProfileClick}>

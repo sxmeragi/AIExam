@@ -75,7 +75,14 @@ const NFTDetail = () => {
     <>
       <NavBar isAuthenticated={isAuthenticated} />
       <Container sx={{ mt: 4 }}>
-        <Card sx={{ backgroundColor: "#2d2d2d", color: "white", p: 2 }}>
+        <Card
+          sx={{
+            backgroundColor: "#3b3b3b",
+            color: "white",
+            p: 2,
+            borderRadius: 20,
+          }}
+        >
           <CardMedia
             component="img"
             image={nft.image}
@@ -84,7 +91,7 @@ const NFTDetail = () => {
           />
           <CardContent sx={{ textAlign: "center" }}>
             <Typography variant="h4" gutterBottom>
-              {nft.title}
+              {nft.name}
             </Typography>
             <Typography variant="body1" gutterBottom>
               {nft.description}
