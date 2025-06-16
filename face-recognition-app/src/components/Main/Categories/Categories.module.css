@@ -106,3 +106,28 @@
 .categoriesCardName {
   padding: 30px;
 }
+
+@media (max-width: 768px) {
+  .categoriesContent {
+    align-items: center;
+  }
+  .categoriesGridRow {
+    display: contents;
+  }
+  .categoriesCard {
+    flex: 1 1 calc(50% - 30px);
+  }
+  .categoriesGridRow {
+    display: contents;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoriesContent {
+    align-items: center;
+  }
+  .categoriesCard {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

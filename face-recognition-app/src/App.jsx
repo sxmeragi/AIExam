@@ -7,10 +7,6 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import FaceRecognition from "./components/FaceRecognition";
-import ProductList from "./components/ProductList";
-import AddProduct from "./components/AddProduct";
-import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Main from "./components/Main/Main";
 import Profile from "./components/Profile";

@@ -159,3 +159,60 @@ a {
   color: #858584;
   padding-top: 2px;
 }
+.creatorsGridMobile {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .creatorsContent {
+    align-items: center;
+  }
+  .creatorsGrid {
+    display: none;
+  }
+  .creatorsLabel {
+    gap: 0;
+    padding-left: 1em;
+  }
+  .creatorsGridMobile {
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .creatorCard {
+    width: 100%;
+    padding: 12px;
+    gap: 12px;
+    background: #3b3b3b;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .creatorAvatarImg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .creatorInfo h5 {
+    font-size: 14px;
+  }
+
+  .additionalInfo p {
+    font-size: 12px;
+  }
+
+  .rankingNumber p {
+    font-size: 14px;
+  }
+  .creatorsButton {
+    max-width: 45px;
+    margin-right: 15px;
+  }
+}

@@ -7,10 +7,10 @@ const Footer = () => {
         <div className={styles.footerContent}>
           <div className={styles.footerInfo}>
             <div className="footerLogo">
-              <div className={styles.footerLogoText}>MyBrand</div>
+              <div className={styles.footerLogoText}>AWGE</div>
             </div>
             <div className={styles.footerAdditionalInfo}>
-              BlankBlankBlankBlankBlank
+              Get Exclusive Promotions & UpdatesStraight To Your Inbox.{" "}
             </div>
           </div>
           <div className={styles.footerExplore}>

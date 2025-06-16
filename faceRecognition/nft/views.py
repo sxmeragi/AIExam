@@ -1,5 +1,6 @@
 from flask import views
 from rest_framework import generics, permissions, status, viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import NFT
 from rest_framework.decorators import action
 from django.db import transaction
@@ -44,6 +45,8 @@ class NFTViewSet(viewsets.ModelViewSet):
     queryset = NFT.objects.all().order_by("-created_at")
     serializer_class = NFTSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ["status"]
+    filter_backends = [DjangoFilterBackend]
 
     def perform_create(self, serializer):
         serializer.save(creator=self.request.user, owner=self.request.user)

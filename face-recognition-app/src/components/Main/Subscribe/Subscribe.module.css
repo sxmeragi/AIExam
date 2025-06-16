@@ -74,3 +74,73 @@
 .subscribeButton:hover {
   transform: scale(0.92);
 }
+@media (max-width: 1024px) {
+  .subscribeContent {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .subscribeLabel {
+    font-size: 32px;
+    text-align: center;
+    max-width: none;
+  }
+
+  .subscribeText {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .subscribeInfo {
+    align-items: center;
+  }
+
+  .subscribeIForm {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .subscribeInput {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .subscribeButton {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .subscribeLabel {
+    font-size: 26px;
+  }
+
+  .subscribeText {
+    font-size: 18px;
+  }
+  .subscribeImg {
+    height: 255px;
+    min-width: 315px;
+    object-fit: cover;
+  }
+  .subscribeButton {
+    font-size: 14px;
+    padding: 10px;
+    height: 35px;
+  }
+
+  .subscribeInput {
+    font-size: 14px;
+  }
+
+  .subscribeContent {
+    padding: 30px 20px;
+  }
+}

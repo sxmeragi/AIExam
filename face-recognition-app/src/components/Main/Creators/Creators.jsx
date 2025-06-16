@@ -344,6 +344,39 @@ const Creators = () => {
             </a>
           </div>
         </div>
+        <div className={styles.creatorsGridMobile}>
+          {[...Array(5)].map((_, index) => (
+            <div className={styles.creatorCard} key={index}>
+              <div className={styles.rankingNumber}>
+                <p
+                  className={`${styles.rankingNumberText} ${styles.additionalInfoPrice}`}
+                >
+                  {index + 1}
+                </p>
+              </div>
+              <div className={styles.creatorAvatar}>
+                <img
+                  src={Image}
+                  alt="creator"
+                  className={styles.creatorAvatarImg}
+                />
+              </div>
+              <div className={styles.creatorInfo}>
+                <h5>seemmmyq</h5>
+                <div className="additionalInfo">
+                  <p>
+                    <span className={styles.additionalInfoText}>
+                      Total Sales:{" "}
+                    </span>
+                    <span className={styles.additionalInfoPrice}>
+                      34.53 ETH
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

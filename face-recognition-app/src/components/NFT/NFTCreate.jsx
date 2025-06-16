@@ -13,8 +13,8 @@ import axiosInstance from "../../utils/axiosInstance";
 import NavBar from "../Main/NavBar/NavBar";
 
 const NFTCreate = () => {
-  const navigate = useNavigate(); // ← подключаем navigate
-
+  const navigate = useNavigate();
+  const isAuthenticated = !!localStorage.getItem("access_token");
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -60,9 +60,8 @@ const NFTCreate = () => {
         severity: "success",
       });
 
-      // редирект через 1.5 секунды
       setTimeout(() => {
-        navigate("/nfts"); // ← сюда направляем (измени путь, если нужно)
+        navigate("/nfts");
       }, 1500);
     } catch (error) {
       const errorMsg =
@@ -73,65 +72,79 @@ const NFTCreate = () => {
 
   return (
     <>
-      <NavBar />
-      <Container sx={{ mt: 4, color: "white" }}>
-        <Typography variant="h4" gutterBottom>
+      <NavBar isAuthenticated={isAuthenticated} />
+      <Container sx={{ mt: { xs: 3, md: 5 }, color: "white" }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ textAlign: "center", mb: 3 }}
+        >
           Создать новый NFT
         </Typography>
+
         <Box
           component="form"
           onSubmit={handleSubmit}
-          sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+          sx={{
+            maxWidth: 500,
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 3,
+            backgroundColor: "#2b2b2b",
+            p: 3,
+            borderRadius: 2,
+            boxShadow: "0 0 10px rgba(255,255,255,0.1)",
+          }}
         >
           <TextField
             name="name"
-            label="Name"
+            label="Название"
             value={form.name}
             onChange={handleChange}
             required
-            InputLabelProps={{
-              sx: { color: "white" },
-            }}
-            InputProps={{
-              sx: { color: "white" },
-            }}
+            fullWidth
+            InputLabelProps={{ sx: { color: "gray" } }}
+            InputProps={{ sx: { color: "white" } }}
           />
           <TextField
             name="description"
-            label="description"
+            label="Описание"
             multiline
+            minRows={3}
             value={form.description}
             onChange={handleChange}
             required
-            InputLabelProps={{
-              sx: { color: "white" },
-            }}
-            InputProps={{
-              sx: { color: "white" },
-            }}
+            fullWidth
+            InputLabelProps={{ sx: { color: "gray" } }}
+            InputProps={{ sx: { color: "white" } }}
           />
           <TextField
             name="price"
-            label="Price"
+            label="Цена"
             type="number"
             value={form.price}
             onChange={handleChange}
             required
-            InputLabelProps={{
-              sx: { color: "white" },
-            }}
-            InputProps={{
-              sx: { color: "white" },
-            }}
+            fullWidth
+            InputLabelProps={{ sx: { color: "gray" } }}
+            InputProps={{ sx: { color: "white" } }}
           />
 
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleFileChange}
-            required
-          />
-          <Button variant="contained" type="submit">
+          <Box>
+            <Typography variant="body2" sx={{ mb: 1, color: "gray" }}>
+              Изображение (JPG, PNG, GIF)
+            </Typography>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              required
+              style={{ color: "white" }}
+            />
+          </Box>
+
+          <Button variant="contained" type="submit" size="large">
             Создать NFT
           </Button>
         </Box>
@@ -144,6 +157,7 @@ const NFTCreate = () => {
           <Alert
             onClose={() => setMessage({ ...message, open: false })}
             severity={message.severity}
+            sx={{ width: "100%" }}
           >
             {message.text}
           </Alert>

@@ -8,8 +8,8 @@ import {
   Alert,
   Paper,
 } from "@mui/material";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import axiosInstance from "../utils/axiosInstance";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register/", {
+      await axiosInstance.post("/register/", {
         username: formData.username,
         password: formData.password,
       });
@@ -54,9 +54,19 @@ const Register = () => {
   };
 
   return (
-    <Container maxWidth="xs" sx={{ position: "relative" }}>
-      <Paper elevation={3} sx={{ padding: 4, mt: 8 }}>
-        <Typography variant="h5" align="center" gutterBottom color="black">
+    <Container maxWidth="xs">
+      <Box display="flex" justifyContent="space-between" mt={2} mb={1}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => navigate("/")}
+        >
+          Return
+        </Button>
+      </Box>
+
+      <Paper elevation={3} sx={{ padding: 4 }}>
+        <Typography variant="h5" align="center" gutterBottom>
           Регистрация
         </Typography>
 
@@ -114,24 +124,20 @@ const Register = () => {
             Зарегистрироваться
           </Button>
         </form>
-      </Paper>
-      <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-        Have an account?
-        <Link
-          to="/register"
-          style={{ color: "#1976d2", textDecoration: "none" }}
+        <Typography
+          variant="body2"
+          align="center"
+          sx={{ mt: 1.2, color: "black" }}
         >
-          Login
-        </Link>
-      </Typography>
-      <Button
-        variant="contained"
-        color="secondary"
-        sx={{ position: "absolute", top: 0, left: "-90px" }}
-        onClick={() => navigate("/")}
-      >
-        Return
-      </Button>
+          Уже есть аккаунт?{" "}
+          <Link
+            to="/login"
+            style={{ color: "#1976d2", textDecoration: "none" }}
+          >
+            Войти
+          </Link>
+        </Typography>
+      </Paper>
     </Container>
   );
 };

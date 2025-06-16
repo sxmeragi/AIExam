@@ -10,6 +10,7 @@ import {
   Button,
   Snackbar,
   Alert,
+  Box,
 } from "@mui/material";
 import NavBar from "../Main/NavBar/NavBar";
 import axiosInstance from "../../utils/axiosInstance";
@@ -44,7 +45,7 @@ const NFTDetail = () => {
 
   const handleBuy = async () => {
     try {
-      const response = await axiosInstance.post(`/nfts/${id}/purchase/`);
+      await axiosInstance.post(`/nfts/${id}/purchase/`);
       setMessage({
         open: true,
         text: "NFT успешно куплен!",
@@ -56,14 +57,23 @@ const NFTDetail = () => {
         owner_username: "Вы",
       }));
     } catch (error) {
-      //   const errorMsg = error.response?.data?.error || "Ошибка при покупке.";
       console.log("Ошибка покупки:", error.response);
-      //   setMessage({ open: true, text: errorMsg, severity: "error" });
     }
   };
 
-  if (loading) return <CircularProgress sx={{ color: "white", mt: 4 }} />;
-  if (!nft) return <Typography color="error">NFT не найден</Typography>;
+  if (loading)
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+        <CircularProgress sx={{ color: "white" }} />
+      </Box>
+    );
+
+  if (!nft)
+    return (
+      <Typography color="error" sx={{ mt: 4, textAlign: "center" }}>
+        NFT не найден
+      </Typography>
+    );
 
   const showBuyButton =
     isAuthenticated &&
@@ -74,50 +84,68 @@ const NFTDetail = () => {
   return (
     <>
       <NavBar isAuthenticated={isAuthenticated} />
-      <Container sx={{ mt: 4 }}>
-        <Card
+      <Container sx={{ mt: { xs: 4, md: 6 }, mb: 4 }}>
+        <Box
           sx={{
-            backgroundColor: "#3b3b3b",
-            color: "white",
-            p: 2,
-            borderRadius: 20,
+            maxWidth: 600,
+            mx: "auto",
           }}
         >
-          <CardMedia
-            component="img"
-            image={nft.image}
-            alt={nft.title}
-            sx={{ maxHeight: 400, objectFit: "contain", margin: "0 auto" }}
-          />
-          <CardContent sx={{ textAlign: "center" }}>
-            <Typography variant="h4" gutterBottom>
-              {nft.name}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              {nft.description}
-            </Typography>
-            <Typography variant="h6" color="primary" gutterBottom>
-              Цена: {nft.price}
-            </Typography>
-            <Typography variant="body2">
-              Автор: {nft.creator_username}
-            </Typography>
-            <Typography variant="body2" color="gray">
-              Статус: {nft.status}
-            </Typography>
-
-            {showBuyButton && (
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{ mt: 2 }}
-                onClick={handleBuy}
+          <Card
+            sx={{
+              backgroundColor: "#3b3b3b",
+              color: "white",
+              p: { xs: 2, md: 3 },
+              borderRadius: 3,
+              boxShadow: "0 0 10px rgba(255,255,255,0.1)",
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={nft.image}
+              alt={nft.title}
+              sx={{
+                maxHeight: 400,
+                objectFit: "contain",
+                width: "100%",
+                borderRadius: 2,
+              }}
+            />
+            <CardContent sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{ fontSize: { xs: "1.8rem", md: "2.2rem" } }}
               >
-                Купить
-              </Button>
-            )}
-          </CardContent>
-        </Card>
+                {nft.name}
+              </Typography>
+              <Typography variant="body1" gutterBottom sx={{ mb: 2 }}>
+                {nft.description}
+              </Typography>
+              <Typography variant="h6" color="primary" gutterBottom>
+                Цена: {nft.price}
+              </Typography>
+              <Typography variant="body2">
+                Автор: {nft.creator_username}
+              </Typography>
+              <Typography variant="body2" color="gray" gutterBottom>
+                Статус: {nft.status === "sold" ? "Продан" : "В продаже"}
+              </Typography>
+
+              {showBuyButton && (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ mt: 2 }}
+                  onClick={handleBuy}
+                  fullWidth
+                >
+                  Купить
+                </Button>
+              )}
+            </CardContent>
+          </Card>
+        </Box>
       </Container>
 
       <Snackbar

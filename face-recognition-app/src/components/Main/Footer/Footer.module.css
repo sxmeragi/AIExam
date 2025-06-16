@@ -108,3 +108,48 @@
 .footerSubscribeButton:hover {
   transform: scale(0.92);
 }
+
+@media (max-width: 1024px) {
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .footerSubscribe {
+    display: none;
+  }
+
+  .footerInfo,
+  .footerExplore {
+    width: 100%;
+  }
+
+  .footerLine {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 20px;
+  }
+  .footerContent {
+    display: flex;
+    margin-left: -160px;
+    flex-direction: column;
+  }
+  .footerSubscribe {
+    display: none;
+  }
+  .footerLogoText {
+    font-size: 20px;
+  }
+
+  .footerAdditionalInfo,
+  .footerExplorePage {
+    font-size: 14px;
+  }
+
+  .footerLine {
+    margin-top: 40px;
+  }
+}

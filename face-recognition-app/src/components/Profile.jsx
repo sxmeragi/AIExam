@@ -9,7 +9,9 @@ import {
   Button,
   CircularProgress,
   Box,
+  useMediaQuery,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import axios from "axios";
 
 const Profile = () => {
@@ -20,6 +22,8 @@ const Profile = () => {
   const [previewAvatar, setPreviewAvatar] = useState(null);
   const navigate = useNavigate();
   const access = localStorage.getItem("access_token");
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -58,7 +62,6 @@ const Profile = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     setSaving(true);
-
     const data = new FormData();
 
     for (const key in formData) {
@@ -72,25 +75,17 @@ const Profile = () => {
     }
 
     try {
-      const response = await axios.patch(
-        "http://127.0.0.1:8000/api/user/me/",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${access}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axiosInstance.patch("/user/me/", data, {
+        headers: {
+          Authorization: `Bearer ${access}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setUser(response.data);
       setEditMode(false);
       setPreviewAvatar(response.data.avatar);
     } catch (err) {
-      if (err.response) {
-        console.error("Ошибка при сохранении профиля:", err.response.data);
-      } else {
-        console.error("Ошибка:", err);
-      }
+      console.error("Ошибка:", err.response?.data || err);
     } finally {
       setSaving(false);
     }
@@ -103,17 +98,30 @@ const Profile = () => {
   };
 
   if (!user) return <CircularProgress sx={{ color: "white" }} />;
+
   return (
     <Container maxWidth="sm" sx={{ mt: 4, color: "white" }}>
-      <Box display="flex" justifyContent="space-between" mb={2}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        flexDirection={isMobile ? "column" : "row"}
+        gap={2}
+        mb={3}
+      >
         <Button
           variant="contained"
           color="secondary"
           onClick={() => navigate("/")}
+          fullWidth={isMobile}
         >
           Return
         </Button>
-        <Button variant="contained" color="secondary" onClick={handleLogout}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleLogout}
+          fullWidth={isMobile}
+        >
           Logout
         </Button>
       </Box>
@@ -121,7 +129,11 @@ const Profile = () => {
       <Box sx={{ textAlign: "center", mb: 2 }}>
         <Avatar
           src={previewAvatar}
-          sx={{ width: 100, height: 100, margin: "0 auto" }}
+          sx={{
+            width: isMobile ? 80 : 100,
+            height: isMobile ? 80 : 100,
+            margin: "0 auto",
+          }}
         />
         {editMode && (
           <Button variant="outlined" component="label" sx={{ mt: 1 }}>
@@ -142,12 +154,15 @@ const Profile = () => {
             <Typography variant="h6">
               Имя пользователя: {user.username}
             </Typography>
-            <Typography>Биография: {user.bio}</Typography>
-            <Typography>Дата рождения: {user.birth_date}</Typography>
+            <Typography>Биография: {user.bio || "–"}</Typography>
+            <Typography>
+              Дата рождения: {user.birth_date || "не указана"}
+            </Typography>
             <Button
               variant="contained"
               sx={{ mt: 2 }}
               onClick={() => setEditMode(true)}
+              fullWidth={isMobile}
             >
               Редактировать
             </Button>
@@ -160,12 +175,8 @@ const Profile = () => {
               value={formData.username || ""}
               onChange={handleChange}
               fullWidth
-              InputLabelProps={{
-                sx: { color: "white" },
-              }}
-              InputProps={{
-                sx: { color: "white" },
-              }}
+              InputLabelProps={{ sx: { color: "white" } }}
+              InputProps={{ sx: { color: "white" } }}
             />
             <TextField
               label="Биография"
@@ -175,12 +186,8 @@ const Profile = () => {
               fullWidth
               multiline
               rows={3}
-              InputLabelProps={{
-                sx: { color: "white" },
-              }}
-              InputProps={{
-                sx: { color: "white" },
-              }}
+              InputLabelProps={{ sx: { color: "white" } }}
+              InputProps={{ sx: { color: "white" } }}
             />
             <TextField
               label="Дата рождения"
@@ -189,15 +196,14 @@ const Profile = () => {
               value={formData.birth_date || ""}
               onChange={handleChange}
               fullWidth
-              InputLabelProps={{
-                shrink: true,
-                sx: { color: "white" },
-              }}
-              InputProps={{
-                sx: { color: "white" },
-              }}
+              InputLabelProps={{ shrink: true, sx: { color: "white" } }}
+              InputProps={{ sx: { color: "white" } }}
             />
-            <Box display="flex" gap={2}>
+            <Box
+              display="flex"
+              flexDirection={isMobile ? "column" : "row"}
+              gap={2}
+            >
               <Button
                 variant="contained"
                 color="primary"

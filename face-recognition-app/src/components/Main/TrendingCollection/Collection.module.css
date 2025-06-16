@@ -157,3 +157,33 @@ h5 {
   font-size: 16px;
   font-weight: 400;
 }
+
+@media (max-width: 768px) {
+  .collectionContent {
+    align-items: center;
+    margin-left: 2em;
+  }
+
+  .collectionLabel {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .collectionItems {
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    gap: 50px;
+  }
+
+  .collectionItem {
+    align-items: center;
+  }
+
+  .collectionMicroImgs {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

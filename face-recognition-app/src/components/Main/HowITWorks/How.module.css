@@ -60,3 +60,57 @@
   font-size: 16px;
   max-width: 270px;
 }
+@media (max-width: 1024px) {
+  .howContent {
+    align-items: center;
+  }
+  .howSteps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .HowStepsItem {
+    width: 45%;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .howContent {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .howLabelH3 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .howLabelText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .howSteps {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .HowStepsItem {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .howStepsItemText {
+    font-size: 14px;
+  }
+
+  .howStepsItemLabel {
+    font-size: 18px;
+  }
+}
